@@ -1,0 +1,319 @@
+student@ITP-CC2-38:~$ cd osslab
+student@ITP-CC2-38:~/osslab$ git clone "https://github.com/KavyaShruthiV/oss1.git"
+fatal: destination path 'oss1' already exists and is not an empty directory.
+student@ITP-CC2-38:~/osslab$ git status
+On branch main
+nothing to commit, working tree clean
+student@ITP-CC2-38:~/osslab$ git branch b1
+student@ITP-CC2-38:~/osslab$ git branch b2
+student@ITP-CC2-38:~/osslab$ git branch
+  b1
+  b2
+* main
+student@ITP-CC2-38:~/osslab$ git checkout b1
+Switched to branch 'b1'
+student@ITP-CC2-38:~/osslab$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+student@ITP-CC2-38:~/osslab$ git checkout main
+Switched to branch 'main'
+student@ITP-CC2-38:~/osslab$ git checkout b1
+Switched to branch 'b1'
+student@ITP-CC2-38:~/osslab$ cat new.html
+cat: new.html: No such file or directory
+student@ITP-CC2-38:~/osslab$ cat > new.html
+<p> Hello </p>
+^C
+student@ITP-CC2-38:~/osslab$ git status
+On branch b1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	new.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+student@ITP-CC2-38:~/osslab$ git add --all
+student@ITP-CC2-38:~/osslab$ git commit -m "new file added"
+[b1 6c09f11] new file added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 new.html
+student@ITP-CC2-38:~/osslab$ git push
+fatal: The current branch b1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin b1
+
+student@ITP-CC2-38:~/osslab$ git push --set-upstream origin b1
+Username for 'https://github.com': Kavya
+Password for 'https://Kavya@github.com': 
+student@ITP-CC2-38:~/osslab$ git push --set-upstream origin b1\
+> ^C
+student@ITP-CC2-38:~/osslab$ git push --set-upstream origin b1
+Username for 'https://github.com': KavyaShruthiV
+Password for 'https://KavyaShruthiV@github.com': 
+remote: Permission to KavyaShruthiV/oss1.git denied to KavyaShruthiV.
+fatal: unable to access 'https://github.com/KavyaShruthiV/oss1.git/': The requested URL returned error: 403
+student@ITP-CC2-38:~/osslab$ git push --set-upstream origin b1
+Username for 'https://github.com': KavyaShruthiV
+Password for 'https://KavyaShruthiV@github.com': 
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (18/18), 2.50 KiB | 852.00 KiB/s, done.
+Total 18 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+remote: 
+remote: Create a pull request for 'b1' on GitHub by visiting:
+remote:      https://github.com/KavyaShruthiV/oss1/pull/new/b1
+remote: 
+To https://github.com/KavyaShruthiV/oss1.git
+ * [new branch]      b1 -> b1
+Branch 'b1' set up to track remote branch 'b1' from 'origin'.
+student@ITP-CC2-38:~/osslab$ git branch b2
+fatal: A branch named 'b2' already exists.
+student@ITP-CC2-38:~/osslab$ git checkout b2
+Switched to branch 'b2'
+student@ITP-CC2-38:~/osslab$ cat > newb.html
+<p> hi</p>
+^C
+student@ITP-CC2-38:~/osslab$ git push
+fatal: The current branch b2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin b2
+
+student@ITP-CC2-38:~/osslab$ git push --set-upstream origin b2
+Username for 'https://github.com': KavyaShruthiV
+Password for 'https://KavyaShruthiV@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'b2' on GitHub by visiting:
+remote:      https://github.com/KavyaShruthiV/oss1/pull/new/b2
+remote: 
+To https://github.com/KavyaShruthiV/oss1.git
+ * [new branch]      b2 -> b2
+Branch 'b2' set up to track remote branch 'b2' from 'origin'.
+student@ITP-CC2-38:~/osslab$ git checkout main
+Switched to branch 'main'
+student@ITP-CC2-38:~/osslab$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	newb.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+student@ITP-CC2-38:~/osslab$ git add --all
+student@ITP-CC2-38:~/osslab$ git commit -m"hi"
+[main e6d512b] hi
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newb.html
+student@ITP-CC2-38:~/osslab$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+student@ITP-CC2-38:~/osslab$ git push --set-upstream origin main
+Username for 'https://github.com': KavyaShruthiV
+Password for 'https://KavyaShruthiV@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 286 bytes | 286.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'main' on GitHub by visiting:
+remote:      https://github.com/KavyaShruthiV/oss1/pull/new/main
+remote: 
+To https://github.com/KavyaShruthiV/oss1.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+student@ITP-CC2-38:~/osslab$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+student@ITP-CC2-38:~/osslab$ git log
+commit e6d512b49e5442aff2eaa864beeed4e6943dafa2 (HEAD -> main, origin/main)
+Author: HarryHari0ffi <shariharasudhan2002@gmail.com>
+Date:   Fri May 5 11:05:39 2023 +0530
+
+    hi
+
+commit e81dbccf836eebb615c4bc7d6103a5e0ec79e6c0 (origin/b2, b2)
+Author: Sobiyak201 <sobiyak.20cse@kongu.edu>
+Date:   Fri Apr 28 12:05:48 2023 +0530
+
+    new
+
+commit 67a0d88bd8acd7c498e7e3fa26c9d9123d210469
+Author: Sobiyak201 <sobiyak.20cse@kongu.edu>
+Date:   Thu Mar 23 12:02:52 2023 +0530
+
+    maharishi
+student@ITP-CC2-38:~/osslab$ git clone "https://github.com/KavyaShruthiV/oss2.git"
+Cloning into 'oss2'...
+warning: You appear to have cloned an empty repository.
+student@ITP-CC2-38:~/osslab$ cat > a.html
+<p> Hi</p>
+^C
+student@ITP-CC2-38:~/osslab$ git add --all
+error: 'oss2/' does not have a commit checked out
+fatal: adding files failed
+student@ITP-CC2-38:~/osslab$ git push
+Username for 'https://github.com': KavyaShruthi
+Password for 'https://KavyaShruthi@github.com': 
+student@ITP-CC2-38:~/osslab$ KavyaShruthiV
+KavyaShruthiV: command not found
+student@ITP-CC2-38:~/osslab$ git push
+Username for 'https://github.com': KavyaShruthiV
+Password for 'https://KavyaShruthiV@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/KavyaShruthiV/oss1.git/'
+student@ITP-CC2-38:~/osslab$ git push
+Username for 'https://github.com': KavyaShruthiV
+Password for 'https://KavyaShruthiV@github.com': 
+Everything up-to-date
+student@ITP-CC2-38:~/osslab$ git remote add origin https://github.com/KavyaShruthiV/oss2.git
+fatal: remote origin already exists.
+student@ITP-CC2-38:~/osslab$ git branch -M master
+student@ITP-CC2-38:~/osslab$ git push -u origin master
+Username for 'https://github.com': KavyaShruthiV
+Password for 'https://KavyaShruthiV@github.com': 
+To https://github.com/KavyaShruthiV/oss1.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/KavyaShruthiV/oss1.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+student@ITP-CC2-38:~/osslab$ git init
+Reinitialized existing Git repository in /home/student/osslab/.git/
+student@ITP-CC2-38:~/osslab$ git add --all
+error: 'oss2/' does not have a commit checked out
+fatal: adding files failed
+student@ITP-CC2-38:~/osslab$ git commit -m"hhj"
+On branch master
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	a.html
+	oss2/
+
+nothing added to commit but untracked files present (use "git add" to track)
+student@ITP-CC2-38:~/osslab$ git add a.html
+student@ITP-CC2-38:~/osslab$ git commit -m"hhj"
+[master 3ae7e62] hhj
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.html
+student@ITP-CC2-38:~/osslab$ git push
+fatal: The upstream branch of your current branch does not match
+the name of your current branch.  To push to the upstream branch
+on the remote, use
+
+    git push origin HEAD:main
+
+To push to the branch of the same name on the remote, use
+
+    git push origin HEAD
+
+To choose either option permanently, see push.default in 'git help config'.
+student@ITP-CC2-38:~/osslab$ git push origin HEAD
+Username for 'https://github.com': KavyaShruthiV
+Password for 'https://KavyaShruthiV@github.com': 
+To https://github.com/KavyaShruthiV/oss1.git
+ ! [rejected]        HEAD -> master (fetch first)
+error: failed to push some refs to 'https://github.com/KavyaShruthiV/oss1.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+student@ITP-CC2-38:~/osslab$ git remote add origin https://github.com/KavyaShruthiV/oss2.git
+fatal: remote origin already exists.
+student@ITP-CC2-38:~/osslab$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/KavyaShruthiV/oss1.git'
+student@ITP-CC2-38:~/osslab$ git remote add origin https://github.com/KavyaShruthiV/oss2.git
+fatal: remote origin already exists.
+student@ITP-CC2-38:~/osslab$ cd oss2
+student@ITP-CC2-38:~/osslab/oss2$ git clone https://github.com/Kavya
+Cloning into 'Kavya'...
+Sremote: Not Found
+fatal: repository 'https://github.com/Kavya/' not found
+student@ITP-CC2-38:~/osslab/oss2$ git clone https://github.com/KavyaShruthiV/oss2.git
+Cloning into 'oss2'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 588 bytes | 588.00 KiB/s, done.
+student@ITP-CC2-38:~/osslab/oss2$ cat > a.html
+<p> Hi</p>
+^C
+student@ITP-CC2-38:~/osslab/oss2$ git add -all
+error: did you mean `--all` (with two dashes)?
+student@ITP-CC2-38:~/osslab/oss2$ git add --all
+student@ITP-CC2-38:~/osslab/oss2$ cat > b.html
+<p> hello</p>
+^C
+student@ITP-CC2-38:~/osslab/oss2$ git add --all
+student@ITP-CC2-38:~/osslab/oss2$ git commit -m "hi"
+[master (root-commit) 5b93329] hi
+ 2 files changed, 2 insertions(+)
+ create mode 100644 a.html
+ create mode 100644 b.html
+student@ITP-CC2-38:~/osslab/oss2$ git push
+Username for 'https://github.com': KavyaShruthiV
+Password for 'https://KavyaShruthiV@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 274 bytes | 274.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/KavyaShruthiV/oss2/pull/new/master
+remote: 
+To https://github.com/KavyaShruthiV/oss2.git
+ * [new branch]      master -> master
+student@ITP-CC2-38:~/osslab/oss2$ git commit -m"f"
+hint: The '.git/hooks/pre-commit' hook was ignored because it's not set as executable.
+hint: You can disable this warning with `git config advice.ignoredHook false`.
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+student@ITP-CC2-38:~/osslab/oss2$ cat >c.html
+<p> hsf</p>
+student@ITP-CC2-38:~/osslab/oss2$ git add --all
+student@ITP-CC2-38:~/osslab/oss2$ git commit -m"sf"
+hint: The '.git/hooks/pre-commit' hook was ignored because it's not set as executable.
+hint: You can disable this warning with `git config advice.ignoredHook false`.
+[master fd5629d] sf
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.html
+student@ITP-CC2-38:~/osslab/oss2$ git commit -m"sf"
+.git/hooks/pre-commit: 2: echoKS: not found
+student@ITP-CC2-38:~/osslab/oss2$ git commit -m"sf"
+.git/hooks/pre-commit: 2: echoloading: not found
+student@ITP-CC2-38:~/osslab/oss2$ cat > h.html
+<p> hi</p>
+student@ITP-CC2-38:~/osslab/oss2$ git add --all
+student@ITP-CC2-38:~/osslab/oss2$ git commit -m"Hello"
+loading
+[master 19940a4] Hello
+ 1 file changed, 1 insertion(+)
+ create mode 100644 h.html
+student@ITP-CC2-38:~/osslab/oss2$ cat >> h.html
+hello
+student@ITP-CC2-38:~/osslab/oss2$ git add --all
+student@ITP-CC2-38:~/osslab/oss2$ git commit -m"Hello"
+Kavya Shruthi
+[master 820a3ae] Hello
+ 1 file changed, 1 insertion(+)
+student@ITP-CC2-38:~/osslab/oss2$ 
